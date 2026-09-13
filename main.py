@@ -1,12 +1,15 @@
 from pygame import *   
 import sounddevice as sd 
-
+import random
 # === Налаштування ===
 fs = 44100     # Частота дискретизації (кількість вимірів за секунду)
 chunk = 1024   # Кількість семплів (відліків) за один кадр
 width, height = 800, 400  
 
 init()
+music=[r"mic-wave-pygame/Виктор Цой - Пачка сигарет.mp3",r"mic-wave-pygame/Виктор Цой - Хочу перемен.mp3"]
+mixer.music.load(random.choice(music))
+mixer.music.play()
 screen = display.set_mode((width, height))
 display.set_caption("Live Audio (Mic)")
 clock = time.Clock()
